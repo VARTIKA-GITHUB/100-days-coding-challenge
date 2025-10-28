@@ -1,0 +1,25 @@
+DAY14-REVERSE WORDS IN A STRING
+
+class Solution {
+public:
+    string reverseWords(string s) {
+        int n= s.size();
+        string result="";
+        int end=n-1;
+        int start;
+        while(end>=0)
+        {
+            while(end>=0 && s[end]==' ')end--;
+            if(end<0)break;
+            int start=end;
+            while(start >=0 && s[start]!=' ')start--;
+            string word=s.substr(start+1,end-start);
+//  as the ssubstr function will give the substring and it will take the position and the length of the string.
+            if(!result.empty()) result+=" ";
+            result+=word;
+            end=start-1;
+
+        }
+      return result; 
+    }
+};
